@@ -1,0 +1,16 @@
+<p>My name is {{ name }}</p>
+
+<div [innerText]="text"></div>
+
+<button (click)="cheerMe()">Cheer Me !</button>
+
+<app-cheers-counter [cheers]="cheers.length" (newCheer)="logCheer($event)"></app-cheers-counter>
+
+<div [ngSwitch]="cheers.length">
+    <div *ngSwitchCase="0">I'm doing my best !</div>
+    <div *ngSwitchDefault>Thanks for cheering me up !</div>
+</div>
+
+<span *ngFor="let cheer of cheers; let i = index">
+    Cheer {{ i+1 }}: {{ cheer }}
+</span>
